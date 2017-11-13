@@ -533,6 +533,9 @@ PyMODINIT_FUNC init_GPIO(void)
         gpio_to_pin = &gpio_to_pin_rev3;
         break;
     default:
+        pin_to_gpio = &pin_to_gpio_rev3;
+        gpio_to_pin = &gpio_to_pin_rev3;
+        break;
         PyErr_SetString(PyExc_SystemError, "This module can only be run on a Raspberry Pi!");
 #if PY_MAJOR_VERSION > 2
         return NULL;
